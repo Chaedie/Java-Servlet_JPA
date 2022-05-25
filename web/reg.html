@@ -6,12 +6,16 @@
 </head>
 <body>
 <div>
-    <form action="hi">
+    <form action="notice-reg" method="post">
         <div>
-            WOW! This is IntelliJ ㅋㅋㅋㅋ<br>
+            <label for="">제목:</label><input name="title" type="text">
+
         </div>
         <div>
-            <input type="text" name="cnt" placeholder="몇 번 할까용?"/>
+            <label for="">내용</label>
+            <textarea name="content"></textarea>
+        </div>
+        <div>
             <input type="submit" value="출력"/>
         </div>
     </form>
