@@ -15,10 +15,21 @@ public class Add extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp)
         throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
-        int a_ = Integer.parseInt(req.getParameter("a"));
-        int b_ = Integer.parseInt(req.getParameter("b"));
-        int result = a_ + b_;
+        String a_ = req.getParameter("a");
+        String b_ = req.getParameter("b");
 
-        out.println("결과 값 : " + result);
+        int a = 0;
+        int b = 0;
+
+        if (!a_.equals("")) {
+            a = Integer.parseInt(a_);
+        }
+        if (!b_.equals("")) {
+            b = Integer.parseInt(b_);
+        }
+
+        int result = a + b;
+
+        out.printf("결과 값 : %d\n", result);
     }
 }
