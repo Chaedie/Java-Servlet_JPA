@@ -26,6 +26,9 @@ hs_err_pid*
 ### Example user template template
 ### Example user template
 
+# node_modules
+node_modules/
+
 # the dist file could make some problems
 # dist/
 nbdist/
