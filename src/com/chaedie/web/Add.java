@@ -14,6 +14,9 @@ public class Add extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp)
         throws ServletException, IOException {
+        resp.setContentType("text/html;charset=UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+
         PrintWriter out = resp.getWriter();
         String a_ = req.getParameter("a");
         String b_ = req.getParameter("b");

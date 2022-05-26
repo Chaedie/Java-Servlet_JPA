@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/calc")
-public class Calc extends HttpServlet {
+@WebServlet("/add2")
+public class Add2 extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp)
@@ -18,25 +18,13 @@ public class Calc extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
 
         PrintWriter out = resp.getWriter();
-        String a_ = req.getParameter("a");
-        String b_ = req.getParameter("b");
-        String op = req.getParameter("operator");
+        String[] num_ = req.getParameterValues("num");
 
-        int a = 0;
-        int b = 0;
-
-        if (!a_.equals("") && !(a_ == null)) {
-            a = Integer.parseInt(a_);
-        }
-        if (!b_.equals("") && !(b_ == null)) {
-            b = Integer.parseInt(b_);
-        }
         int result = 0;
-        if (op.equals("덧셈")) {
-            result = a + b;
-        }
-        if (op.equals("뺄셈")) {
-            result = a - b;
+
+        for (int i = 0; i < num_.length; i++) {
+            int num = Integer.parseInt(num_[i]);
+            result += num;
         }
 
         out.printf("결과 값 : %d\n", result);

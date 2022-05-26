@@ -26,10 +26,39 @@ hs_err_pid*
 ### Example user template template
 ### Example user template
 
+# node_modules
+node_modules/
+
+# the dist file could make some problems
+# dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+.nb-gradle/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
 # IntelliJ project files
 .idea
 *.iml
+*.iws
 out
 gen
 .gradle
 build
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
